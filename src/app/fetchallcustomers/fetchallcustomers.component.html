@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetchAllCustomers</title>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <h2>Customer List</h2>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr class="text-center">
+                    <th scope="col">Customer Id</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">City</th>
+                    <th scope="col" colspan="3">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let customer of customers" class="text-center">
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.customerName }}</td>
+                    <td>{{ customer.dob}}</td>
+                    <td>{{ customer.mobile }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.city }}</td>
+                    <td>
+                        <button class="btn btn-info btn-sm" 
+                        [routerLink]="['/customer/get', customer.id]">View</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning btn-sm"
+                            [routerLink]="['/customer/edit', customer.id]">Edit</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger btn-sm"
+                            [routerLink]="['/customer/delete', customer.id]">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

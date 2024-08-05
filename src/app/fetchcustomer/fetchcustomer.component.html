@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetchProduct</title>
+    <style>
+        .container {
+            max-width: 600px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container mt-5 p-4 border rounded shadow-sm bg-light">
+    <h2 class="text-center mb-4">Customer Details</h2>
+    <div *ngIf="selectedCustomer !== undefined" class="card">
+        <div class="card-body">
+            <p class="card-text"><strong>Id:</strong> {{selectedCustomer.id}}</p>
+            <p class="card-text"><strong>Name:</strong> {{selectedCustomer.customerName}}</p>
+            <p class="card-text"><strong>DOB:</strong> {{selectedCustomer.dob}}</p>
+            <p class="card-text"><strong>Mobile:</strong> {{selectedCustomer.mobile}}</p>
+            <p class="card-text"><strong>Email:</strong> {{selectedCustomer.email}}</p>
+            <p class="card-text"><strong>City:</strong> {{selectedCustomer.city}}</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -15,6 +15,7 @@ export class AddproductComponent {
 
   saveProduct(addProductForm:any){
     console.log("Added Product Details");
+    console.log(addProductForm.value);
     this.productService.addNewProduct(addProductForm.value)
     .subscribe(()=>alert("Product successfully added!..."));
   }

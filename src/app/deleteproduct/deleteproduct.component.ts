@@ -24,16 +24,13 @@ export class DeleteproductComponent implements OnInit {
         this.productService.deleteProduct(productId).subscribe({
           next: () => {
             alert('Product deleted successfully!');
-            this.router.navigate(['product/all']); // Navigate to all products
           },
           error: () => {
-            alert('Failed to delete product.');
-            this.router.navigate(['product/all']); // Navigate to all products on error
+            alert('Failed to delete customer.');
           }
         });
       } else {
         alert('Product deletion cancelled.');
-        this.router.navigate(['product/all']); // Navigate to all products if cancelled
       }
     });
   }
