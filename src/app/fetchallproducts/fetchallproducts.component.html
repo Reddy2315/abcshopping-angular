@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetchAllProducts</title>
+</head>
+
+<body>
+
+    <h2>Product List</h2>
+
+    <!-- <button (click) = "fetchAllProducts()">Click Here To Fetch Products</button> -->
+
+    <!-- <div *ngFor="let product of products">
+<p>{{product.id}} {{product.productName}} {{product.productPrice}} {{product.mfd}} {{product.category}}</p>
+
+</div> -->
+
+<div class="container mt-4">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr class="text-center">
+                <th scope="col" >Product Id</th>
+                <th scope="col" >Product Name</th>
+                <th scope="col" >Product Price</th>
+                <th scope="col" >Manufacturing Date</th>
+                <th scope="col" >Category</th>
+                <th scope="col"  colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products" class="text-center">
+                <td>{{product.id}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.productPrice}}</td>
+                <td>{{product.mfd}}</td>
+                <td>{{product.category}}</td>
+                <td><button class="btn btn-info btn-sm" [routerLink]="['/product/get', product.id]">View</button></td>
+                <td><button class="btn btn-warning btn-sm" [routerLink]="['/product/edit', product.id]">Edit</button></td>
+                <td><button class="btn btn-danger btn-sm" [routerLink]="['/product/delete', product.id]">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+
+</html>
