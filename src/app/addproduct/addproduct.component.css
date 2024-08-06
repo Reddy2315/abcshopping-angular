@@ -1,0 +1,13 @@
+.product-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+     }
+  
+.productform-full-width {
+width: 100%;
+}
+
+.btn{
+    margin-left: 25px;
+}

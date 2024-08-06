@@ -15,7 +15,35 @@
 </head>
 <body>
 
-    <form #addProductForm="ngForm" (ngSubmit)="saveProduct(addProductForm)" class="container mt-5 p-4 border rounded shadow-sm bg-light">
+    <form class="product-form" #addProductForm="ngForm" (ngSubmit)="saveProduct(addProductForm)">
+
+        <mat-form-field class="productform-full-width">
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Enter Product Name" name="productName" ngModel>
+        </mat-form-field>
+    
+        <mat-form-field class="productform-full-width">
+            <mat-label>Product Price</mat-label>
+            <input type="number" matInput placeholder="Enter Product Price" name="productPrice" ngModel>
+        </mat-form-field>
+    
+        <mat-form-field class="productform-full-width">
+            <mat-label>MFD</mat-label>
+            <input type="date" matInput placeholder="Enter Date" name="mfd" ngModel>
+        </mat-form-field>
+    
+        <mat-form-field class="productform-full-width">
+            <mat-label>Category</mat-label>
+            <input type="text" matInput placeholder="Enter Category" name="category" ngModel>
+        </mat-form-field>
+    
+        
+        <button mat-flat-button type="submit">Add Product</button>
+        <button mat-raised-button type="reset" class="btn">Clear</button>
+    
+    </form>
+
+    <!-- <form #addProductForm="ngForm" (ngSubmit)="saveProduct(addProductForm)" class="container mt-5 p-4 border rounded shadow-sm bg-light">
         <h2 class="mb-4 text-center text-primary">Add Product</h2>
         <div class="form-group mb-3">
             <label for="productName" class="form-label">Product Name</label>
@@ -37,7 +65,7 @@
             <input type="submit" value="Add Product" class="btn btn-primary btn-lg me-2 ms-2" />
             <input type="reset" value="Clear" class="btn btn-secondary btn-lg ms-2" />
         </div>
-    </form>
+    </form> -->
     
 </body>
 </html>
