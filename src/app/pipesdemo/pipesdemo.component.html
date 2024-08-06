@@ -1,0 +1,25 @@
+
+<h2>Pipes Demo</h2>
+
+<p>First Name : {{firstName}}</p>
+<p>First Name : {{firstName | uppercase}}</p>
+<p>First Name : {{firstName | lowercase}}</p>
+
+<p>Title : {{title | titlecase}}</p>
+
+<p>Today Date : {{today}}</p>
+<p>Today Date : {{today | date}}</p>
+<p>Today Date : {{today | date : 'dd-MM-YYYY'}}</p>
+
+<p>pno : {{pno}}</p>
+<p>pno : {{pno | percent}}</p>
+
+
+<p>Salary : {{salary}}</p>
+<p>Salary in doller : {{salary | currency}}</p>
+<p>Salary in rupees : {{salary | currency : 'INR'}}</p>
+
+
+<!-- custom pipe -->
+<p>First Name : {{firstName}}</p>
+<p>First Name : {{firstName | greet}}</p>

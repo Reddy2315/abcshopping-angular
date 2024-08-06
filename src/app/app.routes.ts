@@ -10,6 +10,7 @@ import { DeletecustomerComponent } from './deletecustomer/deletecustomer.compone
 import { EditcustomerComponent } from './editcustomer/editcustomer.component';
 import { FetchallcustomersComponent } from './fetchallcustomers/fetchallcustomers.component';
 import { FetchcustomerComponent } from './fetchcustomer/fetchcustomer.component';
+import { PipesdemoComponent } from './pipesdemo/pipesdemo.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -23,5 +24,6 @@ export const routes: Routes = [
     { path: 'customer/add', component: AddcustomerComponent },
     { path: 'customer/get/:cid', component: FetchcustomerComponent },
     { path: 'customer/edit/:cid', component: EditcustomerComponent },
-    { path: 'customer/delete/:cid', component: DeletecustomerComponent}
+    { path: 'customer/delete/:cid', component: DeletecustomerComponent},
+    { path : 'pipesdemos', component: PipesdemoComponent},
 ];
