@@ -11,6 +11,45 @@
 
     <h2>Product List</h2>
 
+    <table mat-table [dataSource]="products" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ProductId</th>
+            <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="productName">
+            <th mat-header-cell *matHeaderCellDef> ProductName</th>
+            <td mat-cell *matCellDef="let product"> {{product.productName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="productPrice">
+            <th mat-header-cell *matHeaderCellDef> ProductPrice</th>
+            <td mat-cell *matCellDef="let product"> {{product.productPrice}} </td>
+        </ng-container>
+        <ng-container matColumnDef="view">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let product">
+                <button  [routerLink]="['/product/get', product.id]">View</button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let product">
+                <button [routerLink]="['/product/edit', product.id]">Edit</button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let product">
+                <button [routerLink]="['/product/delete', product.id]">Delete</button> 
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+
+
     <!-- <button (click) = "fetchAllProducts()">Click Here To Fetch Products</button> -->
 
     <!-- <div *ngFor="let product of products">
@@ -18,15 +57,13 @@
 
 </div> -->
 
-<div class="container mt-4">
+<!-- <div class="container mt-4">
     <table class="table table-bordered table-striped">
         <thead class="thead-dark">
             <tr class="text-center">
                 <th scope="col" >Product Id</th>
                 <th scope="col" >Product Name</th>
                 <th scope="col" >Product Price</th>
-                <th scope="col" >Manufacturing Date</th>
-                <th scope="col" >Category</th>
                 <th scope="col"  colspan="3">Action</th>
             </tr>
         </thead>
@@ -35,15 +72,13 @@
                 <td>{{product.id}}</td>
                 <td>{{product.productName}}</td>
                 <td>{{product.productPrice}}</td>
-                <td>{{product.mfd}}</td>
-                <td>{{product.category}}</td>
                 <td><button class="btn btn-info btn-sm" [routerLink]="['/product/get', product.id]">View</button></td>
                 <td><button class="btn btn-warning btn-sm" [routerLink]="['/product/edit', product.id]">Edit</button></td>
                 <td><button class="btn btn-danger btn-sm" [routerLink]="['/product/delete', product.id]">Delete</button></td>
             </tr>
         </tbody>
     </table>
-</div>
+</div> -->
 
 
 </body>
